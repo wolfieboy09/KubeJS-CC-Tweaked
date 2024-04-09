@@ -40,4 +40,4 @@ modId = "kubejs"
 mandatory = true
 ordering = "NONE"
 side = "BOTH"
-versionRange = "[*,)"
+versionRange = "[2001.6.4-build.121,)"

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PeripheralRegisterEvent extends EventJS {
-
     public PeripheralRegisterEvent(List<PeripheralJS> peripherals) {
         this.peripherals = peripherals;
     }

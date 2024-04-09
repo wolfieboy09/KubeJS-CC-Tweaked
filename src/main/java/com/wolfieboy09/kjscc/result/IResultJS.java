@@ -1,12 +1,8 @@
 package com.wolfieboy09.kjscc.result;
 
 import dan200.computercraft.api.lua.MethodResult;
-import dev.latvian.mods.rhino.NativeArray;
-import dev.latvian.mods.rhino.ScriptableObject;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public interface IResultJS {
     static IResultJS getLuaType(Object o) {
