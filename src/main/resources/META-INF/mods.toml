@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
-#issueTrackerURL = ""
+issueTrackerURL = "https://github.com/wolfieboy09/KubeJS-CC-1.20.1/issues"
 license = "LGPLv3"
 
 [[mods]]
@@ -10,9 +10,9 @@ displayName = "KubeJS ComputerCraft"
 authors = "Wolfieboy09"
 description = '''
 Adding support for ComputerCraft from KubeJS.
-Credit go to Prunoideae for the orignal mod.
+Credit go to Amygdaloideae (Prunoideae on GitHub) for the original mod that I ported from.
 '''
-# logoFile = "icon.png"
+logoFile = "icon.png"
 
 [[dependencies.kjscc]]
 modId = "forge"
@@ -28,10 +28,16 @@ versionRange = "[1.18.2,)"
 ordering = "NONE"
 side = "BOTH"
 
-
 [[dependencies.kjscc]]
 modId = "computercraft"
 mandatory = true
 ordering = "AFTER"
+side = "BOTH"
+versionRange = "[*,)"
+
+[[dependencies.kjscc]]
+modId = "kubejs"
+mandatory = true
+ordering = "NONE"
 side = "BOTH"
 versionRange = "[*,)"
