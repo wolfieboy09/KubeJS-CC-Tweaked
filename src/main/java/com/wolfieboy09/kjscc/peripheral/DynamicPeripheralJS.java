@@ -30,7 +30,7 @@ public class DynamicPeripheralJS implements IDynamicPeripheral {
         Object call(BlockContainerJS block, Direction side, IArguments arguments, IComputerAccess computer, ILuaContext context);
     }
 
-    public DynamicPeripheralJS(String type, Level world, BlockPos pos, Direction side, List<PeripheralMethod> nameMethods) {
+    public DynamicPeripheralJS(String type, Level world, BlockPos pos, Direction side,@NotNull List<PeripheralMethod> nameMethods) {
         this.block = new BlockContainerJS(world, pos);
         this.side = side;
         this.type = type;
