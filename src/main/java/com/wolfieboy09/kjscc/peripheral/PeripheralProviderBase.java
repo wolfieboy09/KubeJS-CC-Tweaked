@@ -1,6 +1,5 @@
 package com.wolfieboy09.kjscc.peripheral;
 
-import com.wolfieboy09.kjscc.peripheral.PeripheralJS;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
