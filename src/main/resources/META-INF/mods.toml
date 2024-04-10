@@ -10,7 +10,7 @@ displayName = "KubeJS ComputerCraft"
 authors = "Wolfieboy09"
 description = '''
 Adding support for ComputerCraft from KubeJS.
-Credit go to Amygdaloideae (Prunoideae on GitHub) for the original mod that I ported from.
+Credit go to Prunoideae for the original mod that I ported from.
 '''
 logoFile = "icon.png"
 
