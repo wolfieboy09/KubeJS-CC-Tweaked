@@ -8,5 +8,5 @@ import dev.latvian.mods.kubejs.event.EventHandler;
 public class ComputerCraftEvents {
     public static final EventGroup GROUP = EventGroup.of("ComputerCraftEvents");
 
-    EventHandler PERIPHERAL = ComputerCraftEvents.GROUP.startup("peripheral", PeripheralJS.class);
+    EventHandler PERIPHERAL = ComputerCraftEvents.GROUP.startup("peripheral", () ->  PeripheralJS.class);
 }
