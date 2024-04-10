@@ -14,5 +14,4 @@ public class ComputerCraftPlugin extends KubeJSPlugin {
     public void registerEvents() {
         ComputerCraftEvents.GROUP.register();
     }
-
 }
