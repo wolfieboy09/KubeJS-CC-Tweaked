@@ -1,4 +1,4 @@
-package com.wolfieboy09.kjscc.peripheral;
+package com.wolfieboy09.kjscc.events;
 
 
 import dev.latvian.mods.kubejs.event.EventGroup;
