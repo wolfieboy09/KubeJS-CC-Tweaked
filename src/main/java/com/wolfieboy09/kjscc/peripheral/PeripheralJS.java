@@ -1,19 +1,13 @@
 package com.wolfieboy09.kjscc.peripheral;
 
-import dev.latvian.mods.kubejs.bindings.event.PlayerEvents;
-import dev.latvian.mods.kubejs.bindings.event.ServerEvents;
 import dev.latvian.mods.kubejs.block.state.BlockStatePredicate;
-import dev.latvian.mods.kubejs.event.EventGroup;
-import dev.latvian.mods.kubejs.event.EventHandler;
+import dev.latvian.mods.kubejs.event.EventJS;
 import dev.latvian.mods.rhino.util.HideFromJS;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
 
-public class PeripheralJS {
-    public static final EventGroup GROUP = EventGroup.of("ComputerCraftEvents");
-
-
+public class PeripheralJS extends EventJS {
     private final BlockStatePredicate predicate;
     private final String type;
     private final List<PeripheralMethod> methods;
