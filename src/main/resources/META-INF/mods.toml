@@ -12,6 +12,7 @@ description = '''
 Adding support for ComputerCraft from KubeJS.
 Credit go to Prunoideae for the original mod that I ported from.
 '''
+
 logoFile = "icon.png"
 
 [[dependencies.kjscc]]
