@@ -19,6 +19,7 @@ public class PeripheralRegisterEvent extends EventJS {
     }
 
     public PeripheralJS registerPeripheral(String type, BlockStatePredicate block) {
+        KJSCC.LOGGER.info("registerPeripheral HAS BEEN CALLED");
         PeripheralJS peripheral = new PeripheralJS(block, type, new ArrayList<>());
         peripherals.add(peripheral);
         return peripheral;
