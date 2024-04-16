@@ -5,7 +5,6 @@ import dev.latvian.mods.kubejs.KubeJSPlugin;
 import dev.latvian.mods.kubejs.script.BindingsEvent;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 
 public class ComputerCraftPlugin extends KubeJSPlugin {
     public void addBindings(@NotNull BindingsEvent event) {
@@ -14,8 +13,6 @@ public class ComputerCraftPlugin extends KubeJSPlugin {
 
     @Override
     public void afterInit() {
-        PeripheralRegisterEvent event = new PeripheralRegisterEvent(new ArrayList<>());
-
         super.afterInit();
     }
 
