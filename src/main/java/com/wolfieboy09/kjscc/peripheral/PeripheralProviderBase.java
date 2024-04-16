@@ -1,6 +1,7 @@
 package com.wolfieboy09.kjscc.peripheral;
 
 import dan200.computercraft.api.peripheral.IPeripheral;
+import dan200.computercraft.api.peripheral.IPeripheralProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
@@ -11,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Optional;
 
-public class PeripheralProviderBase {
+public class PeripheralProviderBase implements IPeripheralProvider {
     protected final List<PeripheralJS> peripherals;
 
     public PeripheralProviderBase(List<PeripheralJS> peripherals) {

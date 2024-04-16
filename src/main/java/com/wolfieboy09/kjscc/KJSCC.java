@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 public class KJSCC {
     public static final String MOD_ID = "kjscc";
     public static final Logger LOGGER = LogUtils.getLogger();
+
     public KJSCC() {
         EventBuses.registerModEventBus(MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
     }
