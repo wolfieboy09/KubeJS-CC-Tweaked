@@ -27,7 +27,7 @@ public class DynamicPeripheralJS implements IDynamicPeripheral {
 
     @FunctionalInterface
     public interface PeripheralCallback {
-        Object call(BlockContainerJS block, Direction side, IArguments arguments, IComputerAccess computer, ILuaContext context);
+        Object call(BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context);
     }
 
     public DynamicPeripheralJS(String type, Level world, BlockPos pos, Direction side,@NotNull List<PeripheralMethod> nameMethods) {
@@ -45,18 +45,26 @@ public class DynamicPeripheralJS implements IDynamicPeripheral {
         return names;
     }
 
+    static private List argsAsList (IArguments args) throws LuaException {
+        List l = new ArrayList();
+        for (int i = 0; i < args.count(); i++) {
+            l.add(args.get(i));
+        }
+        return l;
+    }
     @NotNull
     @Override
     public final MethodResult callMethod(@NotNull IComputerAccess computer, @NotNull ILuaContext context, int method, @NotNull IArguments arguments) throws LuaException {
         try {
             PeripheralMethod peripheralMethod = methods[method];
+            List argsList = argsAsList(arguments);
             if (peripheralMethod.mainThread()) {
                 return context.executeMainThreadTask(() -> {
-                    IResultJS result = IResultJS.getLuaType(peripheralMethod.callback().call(block, side, arguments, computer, context));
+                    IResultJS result = IResultJS.getLuaType(peripheralMethod.callback().call(block, side, argsList, computer, context));
                     return result instanceof MultiResultJS ? (Object[]) result.getConvertedResult() : new Object[]{result.getConvertedResult()};
                 });
             } else {
-                return MethodResult.of(IResultJS.getLuaType(peripheralMethod.callback().call(block, side, arguments, computer, context)).getResult());
+                return MethodResult.of(IResultJS.getLuaType(peripheralMethod.callback().call(block, side, argsList, computer, context)).getResult());
             }
         } catch (Exception e) {
             throw new LuaException(e.getMessage());
