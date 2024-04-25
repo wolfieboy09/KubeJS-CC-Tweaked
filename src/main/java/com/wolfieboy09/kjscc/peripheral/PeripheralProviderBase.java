@@ -14,17 +14,22 @@ import java.util.Optional;
 
 public class PeripheralProviderBase implements IPeripheralProvider {
     protected final List<PeripheralJS> peripherals;
+    protected boolean invalidated = false;
 
     public PeripheralProviderBase(List<PeripheralJS> peripherals) {
         this.peripherals = peripherals;
     }
 
-    protected Optional<PeripheralJS> getPeripheralJS(BlockState state) {
-        return peripherals.stream().filter(p -> p.test(state)).findFirst();
+    }
+
+    public void invalidate() {
+        this.invalidated = true;
     }
 
     @NotNull
     public LazyOptional<IPeripheral> getPeripheral(@NotNull Level world, @NotNull BlockPos pos, @NotNull Direction side) {
+        if (invalidated) return LazyOptional.empty();
+
         PeripheralJS peripheral = getPeripheralJS(world.getBlockState(pos)).orElse(null);
         if (peripheral != null)
             return LazyOptional.of(() -> new DynamicPeripheralJS(peripheral.getType(), world, pos, side, peripheral.getMethods()));

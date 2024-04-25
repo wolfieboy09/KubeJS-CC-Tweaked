@@ -14,6 +14,7 @@ import dev.latvian.mods.kubejs.event.EventJS;
 
 public class ComputerCraftPlugin extends KubeJSPlugin {
     private PeripheralProviderBase provider;
+    private boolean firstReload = true;
 
     public void addBindings(@NotNull BindingsEvent event) {
         event.add("Lua", LuaJS.class);
@@ -26,6 +27,17 @@ public class ComputerCraftPlugin extends KubeJSPlugin {
         ComputerCraftEvents.PERIPHERAL.post((ScriptTypeHolder)ScriptType.STARTUP, (EventJS)event);
         provider = new PeripheralProviderBase(event.getPeripherals());
         ForgeComputerCraftAPI.registerPeripheralProvider(provider);
+    }
+
+    @Override
+    public void onServerReload() {
+        if (firstReload) {
+            firstReload = false;
+            return;
+        }
+        KJSCC.LOGGER.info("There was a server reload");
+        provider.invalidate();
+        afterInit();
     }
 
     @Override
