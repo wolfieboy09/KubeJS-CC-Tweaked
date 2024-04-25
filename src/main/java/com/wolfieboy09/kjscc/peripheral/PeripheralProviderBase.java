@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class PeripheralProviderBase implements IPeripheralProvider {
     protected final List<PeripheralJS> peripherals;
@@ -20,8 +21,8 @@ public class PeripheralProviderBase implements IPeripheralProvider {
         this.peripherals = peripherals;
     }
 
-    protected Optional<PeripheralJS> getPeripheralJS(BlockContainerJS block) {
-        return peripherals.stream().filter(p -> p.test(block)).findFirst();
+    protected List<PeripheralJS> getPeripheralJS(BlockContainerJS block) {
+        return peripherals.stream().filter(p -> p.test(block)).toList();
     }
 
     public void invalidate() {
@@ -32,10 +33,12 @@ public class PeripheralProviderBase implements IPeripheralProvider {
     public LazyOptional<IPeripheral> getPeripheral(@NotNull Level world, @NotNull BlockPos pos, @NotNull Direction side) {
         if (invalidated) return LazyOptional.empty();
 
-        PeripheralJS peripheral = getPeripheralJS(new BlockContainerJS(world, pos)).orElse(null);
-        if (peripheral != null)
-            return LazyOptional.of(() -> new DynamicPeripheralJS(peripheral.getType(), world, pos, side, peripheral.getMethods()));
-        else
+        List<PeripheralJS> match = getPeripheralJS(new BlockContainerJS(world, pos));
+        if (match.size() > 0) {
+            List<PeripheralMethod> allMethods = match.stream().flatMap(p -> p.getMethods().stream()).collect(Collectors.toList());
+            return LazyOptional.of(() -> new DynamicPeripheralJS(match.size() > 1 ? "multiperipheral" : match.get(0).getType(), world, pos, side, allMethods));
+        } else {
             return LazyOptional.empty();
+        }
     }
 }
