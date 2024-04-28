@@ -13,6 +13,7 @@ import dev.latvian.mods.kubejs.level.BlockContainerJS;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -74,6 +75,15 @@ public class DynamicPeripheralJS implements IDynamicPeripheral {
     @NotNull
     public String getType() {
         return type;
+    }
+
+    public Object getTarget () {
+        BlockEntity ent = block.getEntity();
+        if (ent != null) {
+            return ent;
+        } else {
+            return block;
+        }
     }
 
     @Override
