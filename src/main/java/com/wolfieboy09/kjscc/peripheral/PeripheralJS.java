@@ -2,8 +2,8 @@ package com.wolfieboy09.kjscc.peripheral;
 
 import dev.latvian.mods.kubejs.block.state.BlockStatePredicate;
 import dev.latvian.mods.kubejs.event.EventJS;
+import dev.latvian.mods.kubejs.level.BlockContainerJS;
 import dev.latvian.mods.rhino.util.HideFromJS;
-import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
 
@@ -19,8 +19,8 @@ public class PeripheralJS extends EventJS {
     }
 
     @HideFromJS
-    public boolean test(BlockState state) {
-        return predicate.test(state);
+    public boolean test(BlockContainerJS block) {
+        return predicate.test(block.getBlockState());
     }
 
     @HideFromJS
