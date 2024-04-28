@@ -65,7 +65,8 @@ public class DynamicPeripheralJS implements IDynamicPeripheral {
                     return result instanceof MultiResultJS ? (Object[]) result.getConvertedResult() : new Object[]{result.getConvertedResult()};
                 });
             } else {
-                return MethodResult.of(IResultJS.getLuaType(peripheralMethod.callback().call(block, side, argsList, computer, context)).getResult());
+                IResultJS result = IResultJS.getLuaType(peripheralMethod.callback().call(block, side, argsList, computer, context));
+                return MethodResult.of(result instanceof MultiResultJS ? (Object[]) result.getConvertedResult() : new Object[]{result.getConvertedResult()});
             }
         } catch (Exception e) {
             throw new LuaException(e.getMessage());
