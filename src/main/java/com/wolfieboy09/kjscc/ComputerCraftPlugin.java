@@ -35,7 +35,7 @@ public class ComputerCraftPlugin extends KubeJSPlugin {
             firstReload = false;
             return;
         }
-        KJSCC.LOGGER.info("There was a server reload");
+        KJSCC.LOGGER.info("Server Reload Called");
         provider.invalidate();
         afterInit();
     }
