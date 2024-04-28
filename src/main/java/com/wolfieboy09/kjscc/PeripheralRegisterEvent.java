@@ -21,14 +21,12 @@ public class PeripheralRegisterEvent extends EventJS {
     }
 
     public PeripheralJS registerPeripheral(String type, BlockStatePredicate block) {
-        KJSCC.LOGGER.info("registerPeripheral HAS BEEN CALLED");
         PeripheralJS peripheral = new PeripheralJS(block, type, new ArrayList<>());
         peripherals.add(peripheral);
         return peripheral;
     }
 
     public PeripheralJS registerComplexPeripheral(String type, DynamicPredicate cb) {
-        KJSCC.LOGGER.info("registerComplexPeripheral HAS BEEN CALLED");
         ComplexPeripheralJS peripheral = new ComplexPeripheralJS(cb, type, new ArrayList<>());
         peripherals.add(peripheral);
         return peripheral;
