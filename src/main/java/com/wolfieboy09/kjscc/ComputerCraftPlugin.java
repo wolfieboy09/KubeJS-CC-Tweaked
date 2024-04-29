@@ -1,9 +1,14 @@
 package com.wolfieboy09.kjscc;
 
 import java.util.ArrayList;
+import java.util.List;
+
 import com.wolfieboy09.kjscc.peripheral.PeripheralProviderBase;
 import com.wolfieboy09.kjscc.peripheral.PeripheralJS;
 import com.wolfieboy09.kjscc.events.ComputerCraftEvents;
+import com.wolfieboy09.kjscc.peripheral.generic.EnergyPeripheral;
+import com.wolfieboy09.kjscc.peripheral.generic.FluidPeripheral;
+import com.wolfieboy09.kjscc.peripheral.generic.InventoryPeripheral;
 import dan200.computercraft.api.ForgeComputerCraftAPI;
 import dev.latvian.mods.kubejs.KubeJSPlugin;
 import dev.latvian.mods.kubejs.script.BindingsEvent;
@@ -23,7 +28,13 @@ public class ComputerCraftPlugin extends KubeJSPlugin {
     @Override
     public void afterInit() {
         super.afterInit();
-        PeripheralRegisterEvent event = new PeripheralRegisterEvent(new ArrayList<PeripheralJS>());
+
+        List<PeripheralJS> peripheralsList = new ArrayList<PeripheralJS>();
+        peripheralsList.add(new InventoryPeripheral());
+        peripheralsList.add(new FluidPeripheral());
+        peripheralsList.add(new EnergyPeripheral());
+
+        PeripheralRegisterEvent event = new PeripheralRegisterEvent(peripheralsList);
         ComputerCraftEvents.PERIPHERAL.post((ScriptTypeHolder)ScriptType.STARTUP, (EventJS)event);
         provider = new PeripheralProviderBase(event.getPeripherals());
         ForgeComputerCraftAPI.registerPeripheralProvider(provider);

@@ -28,7 +28,7 @@ public class DynamicPeripheralJS implements IDynamicPeripheral {
 
     @FunctionalInterface
     public interface PeripheralCallback {
-        Object call(BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context);
+        Object call(BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context) throws LuaException;
     }
 
     public DynamicPeripheralJS(String type, Level world, BlockPos pos, Direction side,@NotNull List<PeripheralMethod> nameMethods) {

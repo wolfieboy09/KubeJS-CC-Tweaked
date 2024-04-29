@@ -89,6 +89,7 @@ dependencies {
 
     compileOnly("cc.tweaked:cc-tweaked-$mcVersion-core-api:$cctVersion")
     compileOnly(fg.deobf("cc.tweaked:cc-tweaked-$mcVersion-forge-api:$cctVersion"))
+    compileOnly(fg.deobf("cc.tweaked:cc-tweaked-$mcVersion-forge:$cctVersion"))
     runtimeOnly(fg.deobf("cc.tweaked:cc-tweaked-$mcVersion-forge:$cctVersion"))
 
     implementation fg.deobf("dev.latvian.mods:rhino-forge:${rhino_version}")
