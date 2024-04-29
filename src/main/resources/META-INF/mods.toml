@@ -11,7 +11,7 @@ authors = "Wolfieboy09"
 description = '''
 Adding support for ComputerCraft from KubeJS.
 Credit go to Prunoideae for the original mod that I ported from.
-Another thanks to richie3366 for helping out making the mod work!
+Big thanks to richie3366 for helping out making the mod work!
 '''
 
 logoFile = "icon.png"
