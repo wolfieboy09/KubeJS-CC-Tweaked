@@ -6,7 +6,7 @@ license = "LGPLv3"
 [[mods]]
 modId = "kjscc"
 version = "${mod_version}"
-displayName = "KubeJS ComputerCraft"
+displayName = "KubeJS + CC: Tweaked"
 authors = "Wolfieboy09"
 description = '''
 Adding support for ComputerCraft from KubeJS.
