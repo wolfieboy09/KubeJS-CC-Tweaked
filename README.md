@@ -15,7 +15,7 @@ Don't restart your game/server! You can reload your changes by executing in orde
 ### Code/syntax issues may not appear inside the game
 > [!TIP]
 > Keep an eye on your Minecraft `latest.log` logfile, it may be the only place where it displays errors you want to avoid occurring. \
-> KubeJS errors and warnings are in `logs/kubejs`
+> KubeJS errors and warnings are also in `logs/kubejs`
 
 ### What happens if a block has more than one peripheral?
 That happens a lot! We got you covered: our mod will merge them _automagically_. The peripheral type will consequently be named `multiperipheral`.
