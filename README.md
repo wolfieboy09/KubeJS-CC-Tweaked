@@ -2,27 +2,27 @@
 It is for Forge 1.20.1, and no, not making it into Fabric, because I don't know Fabric.
 
 # Tips
-Scripts must be put inside the `startup_scripts` folder. You can name them however you want, as long as their extension is `.js`. People on Windows: beware of ghost `.txt` extensions.
+Scripts must be put inside the `startup_scripts` folder. You can name them, however, you want, as long as their extension is `.js`. People on Windows: beware of ghost `.txt` extensions.
 
 ### Reloading a script after making changes
 Don't restart your game/server! You can reload your changes by executing in order:
 - /kubejs reload startup_scripts
 - /reload
-- Restart the turtle/computer, and, if your peripheral is connected through a wired modem, restart also the peripheral modem by right-clicking twice on the modem.
+- Restart the turtle/computer, and restart if your peripheral is connected through a wired modem. Also the peripheral modem by right-clicking twice on the modem.
 - Enjoy seeing your new changes!
 
 ### Code/syntax issues may not appear inside the game
-Keep an eye on your minecraft `latest.log` logfile, it may be the only place where it displays errors you want to avoid occurring.
+Keep an eye on your Minecraft `latest.log` logfile, it may be the only place where it displays errors you want to avoid occurring.
 
 ### What happens if a block has more than one peripheral?
-That happens a lot! We got you covered: our mod will merge them automagically. The peripheral type will consequently be named `multiperipheral`.
+That happens a lot! We got you covered: our mod will merge them _automagically_. The peripheral type will consequently be named `multiperipheral`.
 
-We also took care of generic peripherals provided natively by Tweaked:CC, but peripherals provided by other mods may be overriden if a block happens to be matched with one of your custom KJS:CC peripherals. Or the other way around. We will take a look into resolving that in a later version of the mod. Please open github issues whenever you encounter a problematic case.
+We also took care of generic peripherals provided natively by **CC: Tweaked** but peripherals provided by other mods may be overridden if a block happens to be matched with one of your custom KJS: CC peripherals. Or the other way around. We will take a look into resolving that in a later version of the mod. Please open GitHub issues whenever you encounter a problematic case.
 
-Beware of naming your methods… methodically. Because methods having the same name on a given block will override randomly each other.
+Beware of naming your methods… methodically. Because methods having the same name on a given block will override randomly over each other.
 
 ### Peripherals can disconnect randomly when they send updates to neighboring blocks
-Make sure your Lua code handles cases when the method returns an error (use pcall to catch them), or when they happen to return `nil`/`false` instead of the expected result. If you use Gregtech Modern, make sure to use their [latest build](https://github.com/GregTechCEu/GregTech-Modern/releases) (or a version higher than `1.2.0.a`), they recently [merged a fix resolving an issue causing massive neighbor updates every tick](https://github.com/GregTechCEu/GregTech-Modern/pull/1164).
+Make sure your Lua code handles cases when the method returns an error _(use pcall to catch them)_, or when they happen to return `nil` or `false` instead of the expected result. If you use Gregtech Modern, make sure to use their [latest build](https://github.com/GregTechCEu/GregTech-Modern/releases) (or a version higher than `1.2.0.a`), they recently [merged a fix resolving an issue causing massive neighbor updates every tick](https://github.com/GregTechCEu/GregTech-Modern/pull/1164).
 
 ## Docs
 `ComputerCraftEvents.peripheral(function (event) {})` has to be put inside a KubeJS startup script.
@@ -65,7 +65,7 @@ Example of methods you could add to furnaces:
 ComputerCraftEvents.peripheral(event => {
     // First Param: peripheral type
     // Second Param: What block it goes to
-    // Note: you can use regex for second param
+    // Note: you can use regex for the second param
     
     event.registerPeripheral("furnace", "minecraft:furnace")
         // This limits the method to 1 call/tick,
@@ -102,7 +102,7 @@ ComputerCraftEvents.peripheral(event => {
 ## GregTech Modern (GTCEu)
 Example of methods you could add to **Gregtech Modern (GTCEu) machines**:
 
-_Note: You do not need to copy/paste the entire script below, feel free to cherrypick which peripherals/methods you want to have. You can also make ones of your own, imagination is the limit, that, and [GTCEu sourcecode](https://github.com/GregTechCEu/GregTech-Modern/tree/1.20.1/src/main/java/com/gregtechceu/gtceu)._
+_Note: You don't need to copy/paste the entire script below; you can just pick which peripherals/methods you want to have. You can also make ones of your own, imagination is the limit, that, and [GTCEu sourcecode](https://github.com/GregTechCEu/GregTech-Modern/tree/1.20.1/src/main/java/com/gregtechceu/gtceu)._
 ```js
 // priority: 0
 // The following code was last updated: April 30th 2024
