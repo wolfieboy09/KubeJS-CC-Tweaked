@@ -1,8 +1,9 @@
-# KubeJS CC
-It is for Forge 1.20.1, and no, not making it into Fabric, because I don't know Fabric.
+# KubeJS + CC: Tweaked
+> [!WARNING]
+> KubeJS + CC: Tweaked is for **Forge 1.20.1** and is **not** avalable for Fabric!
 
-# Tips
-Scripts must be put inside the `startup_scripts` folder. You can name them, however, you want, as long as their extension is `.js`. People on Windows: beware of ghost `.txt` extensions.
+> [!IMPORTANT]
+> Scripts must be put inside the `startup_scripts` folder. You can name them, however, you want, as long as their extension is `.js`. People on Windows: beware of ghost `.txt` extensions.
 
 ### Reloading a script after making changes
 Don't restart your game/server! You can reload your changes by executing in order:
@@ -102,7 +103,9 @@ ComputerCraftEvents.peripheral(event => {
 ## GregTech Modern (GTCEu)
 Example of methods you could add to **Gregtech Modern (GTCEu) machines**:
 
-_Note: You don't need to copy/paste the entire script below; you can just pick which peripherals/methods you want to have. You can also make ones of your own, imagination is the limit, that, and [GTCEu sourcecode](https://github.com/GregTechCEu/GregTech-Modern/tree/1.20.1/src/main/java/com/gregtechceu/gtceu)._
+> [!NOTE]
+> You don't need to copy/paste the entire script below; you can just pick which peripherals/methods you want to have. You can also make ones of your own, imagination is the limit, that, and [GTCEu sourcecode](https://github.com/GregTechCEu/GregTech-Modern/tree/1.20.1/src/main/java/com/gregtechceu/gtceu)
+
 ```js
 // priority: 0
 // The following code was last updated: April 30th 2024
