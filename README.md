@@ -152,12 +152,12 @@ ComputerCraftEvents.peripheral(event => {
             return block.entity.averageVoltage * block.entity.averageAmperage
         })
 
-        // registerComplexPeripheral is another way of registering
-        // a peripheral toward many blocks sharing a capability/feature
-        // checked inside a custom test function returning only true or false.
-        event.registerComplexPeripheral("gt_energy_container", metaMachineWrapper((machine) => {
-            return !!(machine.energyContainer)
-        }))
+    // registerComplexPeripheral is another way of registering
+    // a peripheral toward many blocks sharing a capability/feature
+    // checked inside a custom test function returning only true or false.
+    event.registerComplexPeripheral("gt_energy_container", metaMachineWrapper((machine) => {
+        return !!(machine.energyContainer)
+    }))
         .mainThreadMethod("getEnergyStored", metaMachineWrapper((machine) => {
             return machine.energyContainer.energyStored
         }))
@@ -171,30 +171,30 @@ ComputerCraftEvents.peripheral(event => {
             return machine.energyContainer.getInputPerSec()
         }))
 
-        // GTCapabilityHelper.getXXX() is another handy way to get
-        // capability handlers directly, but we suspect it might
-        // take more resources than our custom metaMachineWrapper.
-        event.registerComplexPeripheral("gt_workable", (block) => !!GTCapabilityHelper.getWorkable(block.level, block.pos, null))
-            .mainThreadMethod("getProgress", (block, dir) => GTCapabilityHelper.getWorkable(block.level, block.pos, dir).progress)
-            .mainThreadMethod("getMaxProgress", (block, dir) => GTCapabilityHelper.getWorkable(block.level, block.pos, dir).maxProgress)
-            .mainThreadMethod("isActive", (block, dir) => GTCapabilityHelper.getWorkable(block.level, block.pos, dir).isActive())
+    // GTCapabilityHelper.getXXX() is another handy way to get
+    // capability handlers directly, but we suspect it might
+    // take more resources than our custom metaMachineWrapper.
+    event.registerComplexPeripheral("gt_workable", (block) => !!GTCapabilityHelper.getWorkable(block.level, block.pos, null))
+        .mainThreadMethod("getProgress", (block, dir) => GTCapabilityHelper.getWorkable(block.level, block.pos, dir).progress)
+        .mainThreadMethod("getMaxProgress", (block, dir) => GTCapabilityHelper.getWorkable(block.level, block.pos, dir).maxProgress)
+        .mainThreadMethod("isActive", (block, dir) => GTCapabilityHelper.getWorkable(block.level, block.pos, dir).isActive())
 
-        event.registerComplexPeripheral("gt_controllable", (block) => !!GTCapabilityHelper.getControllable(block.level, block.pos, null))
-            .mainThreadMethod("isWorkingEnabled", (block, dir) => GTCapabilityHelper.getControllable(block.level, block.pos, dir).isWorkingEnabled())
-            .mainThreadMethod("setWorkingEnabled", (block, dir, args) => GTCapabilityHelper.getControllable(block.level, block.pos, dir).setWorkingEnabled(!!args[0]) || "OK")
+    event.registerComplexPeripheral("gt_controllable", (block) => !!GTCapabilityHelper.getControllable(block.level, block.pos, null))
+        .mainThreadMethod("isWorkingEnabled", (block, dir) => GTCapabilityHelper.getControllable(block.level, block.pos, dir).isWorkingEnabled())
+        .mainThreadMethod("setWorkingEnabled", (block, dir, args) => GTCapabilityHelper.getControllable(block.level, block.pos, dir).setWorkingEnabled(!!args[0]) || "OK")
 
-        event.registerComplexPeripheral("gt_overclockable", (block) => !!GTCapabilityHelper.getWorkable(block.level, block.pos, null))
+    event.registerComplexPeripheral("gt_overclockable", (block) => !!GTCapabilityHelper.getWorkable(block.level, block.pos, null))
         .mainThreadMethod("getOverclockTier", (block, dir) => GTCapabilityHelper.getWorkable(block.level, block.pos, dir).getOverclockTier())
         .mainThreadMethod("getOverclockVoltage", (block, dir) => GTCapabilityHelper.getWorkable(block.level, block.pos, dir).getOverclockVoltage())
         .mainThreadMethod("getMaxOverclockTier", (block, dir) => GTCapabilityHelper.getWorkable(block.level, block.pos, dir).getMaxOverclockTier())
         .mainThreadMethod("getMinOverclockTier", (block, dir) => GTCapabilityHelper.getWorkable(block.level, block.pos, dir).getMinOverclockTier())
         .mainThreadMethod("setOverclockTier", (block, dir, args) => GTCapabilityHelper.getWorkable(block.level, block.pos, dir).setOverclockTier(toInt(args[0])) || "OK")
 
-        // This one feels like magic: it allows to get/set the circuit number
-        // used by the machine / bus. Keep in mind that `-1` means no circuit.
-        event.registerComplexPeripheral("gt_circuit_machine", metaMachineWrapper((machine) => {
-            return !!machine && !!machine.getCircuitInventory
-        }))
+    // This one feels like magic: it allows to get/set the circuit number
+    // used by the machine / bus. Keep in mind that `-1` means no circuit.
+    event.registerComplexPeripheral("gt_circuit_machine", metaMachineWrapper((machine) => {
+        return !!machine && !!machine.getCircuitInventory
+    }))
         .mainThreadMethod("getProgrammedCircuit", metaMachineWrapper((machine) => {
             const stack = machine.getCircuitInventory().storage.getStackInSlot(0)
             if (stack == Item.empty) return -1;
@@ -211,20 +211,20 @@ ComputerCraftEvents.peripheral(event => {
             return "OK"
         }))
 
-        event.registerComplexPeripheral("gt_distinct_part", metaMachineWrapper((machine) => {
-            return !!machine && !!machine.setDistinct
-        }))
+    event.registerComplexPeripheral("gt_distinct_part", metaMachineWrapper((machine) => {
+        return !!machine && !!machine.setDistinct
+    }))
         .mainThreadMethod("isDistinct", metaMachineWrapper(machine => machine.isDistinct()))
         .mainThreadMethod("setDistinct", metaMachineWrapper((machine, block, _, args) => machine.setDistinct(!!args[0]) || "OK"))
 
-        // This one is the most complex one, it allows to manage
-        // a large turbine (steam/gas/plasma) and get information
-        // about its rotor power/durability/efficiency/speed.
-        // Coming soon: a method allowing to replace the Rotor remotely
-        // from another peripheral inventory.
-        event.registerComplexPeripheral("gt_turbine_rotor", metaMachineWrapper((machine) => {
-            return !!machine && (machine instanceof LargeTurbineMachine)
-        }))
+    // This one is the most complex one, it allows to manage
+    // a large turbine (steam/gas/plasma) and get information
+    // about its rotor power/durability/efficiency/speed.
+    // Coming soon: a method allowing to replace the Rotor remotely
+    // from another peripheral inventory.
+    event.registerComplexPeripheral("gt_turbine_rotor", metaMachineWrapper((machine) => {
+        return !!machine && (machine instanceof LargeTurbineMachine)
+    }))
         .mainThreadMethod("getOverclockVoltage", metaMachineWrapper((machine) => {
             return machine.getOverclockVoltage()
         }))
