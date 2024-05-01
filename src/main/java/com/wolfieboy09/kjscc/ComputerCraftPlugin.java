@@ -50,7 +50,5 @@ public class ComputerCraftPlugin extends KubeJSPlugin {
     }
 
     @Override
-    public void registerEvents() {
-        ComputerCraftEvents.GROUP.register();
-    }
+    public void registerEvents() { ComputerCraftEvents.GROUP.register(); }
 }
