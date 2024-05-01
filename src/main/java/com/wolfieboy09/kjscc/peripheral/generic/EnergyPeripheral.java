@@ -25,11 +25,11 @@ public class EnergyPeripheral extends PeripheralJS {
         mainThreadMethod("getEnergyCapacity", this::getEnergyCapacity);
     }
 
-    public Object getEnergy (BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context) {
+    public Object getEnergy (BlockContainerJS block, Direction side, List<Object> arguments, IComputerAccess computer, ILuaContext context) {
         return EnergyMethods.getEnergy(Utils.getEnergyStorage(block));
     }
 
-    public Object getEnergyCapacity (BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context) {
+    public Object getEnergyCapacity (BlockContainerJS block, Direction side, List<Object> arguments, IComputerAccess computer, ILuaContext context) {
         return EnergyMethods.getEnergyCapacity(Utils.getEnergyStorage(block));
     }
 

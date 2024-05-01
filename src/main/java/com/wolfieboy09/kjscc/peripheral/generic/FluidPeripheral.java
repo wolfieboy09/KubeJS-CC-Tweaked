@@ -28,11 +28,11 @@ public class FluidPeripheral extends PeripheralJS {
         mainThreadMethod("pullFluid", this::pullFluid);
     }
 
-    public Object tanks (BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context) {
+    public Object tanks (BlockContainerJS block, Direction side, List<Object> arguments, IComputerAccess computer, ILuaContext context) {
         return FluidMethods.tanks(Utils.getFluidHandler(block));
     }
 
-    public Object pushFluid (BlockContainerJS block, Direction side, @NotNull List arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
+    public Object pushFluid (BlockContainerJS block, Direction side, @NotNull List<Object> arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
         String argToName = Utils.castObjToString(arguments.get(0), "toName must be a string");
         Optional<Integer> argLimit = Optional.empty();
         Optional<String> argFluidName = Optional.ofNullable(arguments.size() > 2 ? Utils.castObjToString(arguments.get(2), "fluidName must be a string") : null);
@@ -40,7 +40,7 @@ public class FluidPeripheral extends PeripheralJS {
         return FluidMethods.pushFluid(Utils.getFluidHandler(block), computer, argToName, argLimit, argFluidName);
     }
 
-    public Object pullFluid (BlockContainerJS block, Direction side, @NotNull List arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
+    public Object pullFluid (BlockContainerJS block, Direction side, @NotNull List<Object> arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
         String argFromName = Utils.castObjToString(arguments.get(0), "fromName must be a string");
         Optional<Integer> argLimit = Optional.empty();
         Optional<String> argFluidName = Optional.ofNullable(arguments.size() > 2 ? Utils.castObjToString(arguments.get(2), "fluidName must be a string") : null);
