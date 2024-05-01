@@ -1,11 +1,11 @@
 package com.wolfieboy09.kjscc.peripheral.generic;
 
 import com.wolfieboy09.kjscc.Utils;
+import com.wolfieboy09.kjscc.methods.InventoryMethods;
 import com.wolfieboy09.kjscc.peripheral.PeripheralJS;
 import dan200.computercraft.api.lua.ILuaContext;
 import dan200.computercraft.api.lua.LuaException;
 import dan200.computercraft.api.peripheral.IComputerAccess;
-import dan200.computercraft.shared.peripheral.generic.methods.InventoryMethods;
 import dev.latvian.mods.kubejs.level.BlockContainerJS;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -30,40 +30,40 @@ public class InventoryPeripheral extends PeripheralJS {
         mainThreadMethod("pullItems", this::pullItems);
     }
 
-    public Object list (BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context) {
-        return invMethods.list(Utils.getItemHandler(block));
+    public Object list (BlockContainerJS block, Direction side, List<Object> arguments, IComputerAccess computer, ILuaContext context) {
+        return InventoryMethods.list(Utils.getItemHandler(block));
     }
 
-    public Object size (BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context) {
-        return invMethods.size(Utils.getItemHandler(block));
+    public Object size (BlockContainerJS block, Direction side, List<Object> arguments, IComputerAccess computer, ILuaContext context) {
+        return InventoryMethods.size(Utils.getItemHandler(block));
     }
 
-    public Object getItemDetail (BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
+    public Object getItemDetail (BlockContainerJS block, Direction side, List<Object> arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
         int arg0 = Utils.castObjToInt(arguments.get(0), "Slot must be a valid integer");
-        return invMethods.getItemDetail(Utils.getItemHandler(block), arg0);
+        return InventoryMethods.getItemDetail(Utils.getItemHandler(block), arg0);
     }
 
-    public Object getItemLimit (BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
+    public Object getItemLimit (BlockContainerJS block, Direction side, List<Object> arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
         int arg0 = Utils.castObjToInt(arguments.get(0), "Slot must be a valid integer");
-        return invMethods.getItemLimit(Utils.getItemHandler(block), arg0);
+        return InventoryMethods.getItemLimit(Utils.getItemHandler(block), arg0);
     }
 
-    public Object pushItems (BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
+    public Object pushItems (BlockContainerJS block, Direction side, List<Object> arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
         String argToName = Utils.castObjToString(arguments.get(0), "toName must be a string");
         int argFromSlot = Utils.castObjToInt(arguments.get(1), "fromSlot must be a valid integer");
-        Optional<Integer> argLimit = Optional.ofNullable(arguments.size() > 2 ? Integer.valueOf(Utils.castObjToInt(arguments.get(2), "Limit must be a valid integer")) : null);
-        Optional<Integer> argToSlot = Optional.ofNullable(arguments.size() > 3 ? Integer.valueOf(Utils.castObjToInt(arguments.get(3), "toSlot must be a valid integer")) : null);
+        Optional<Integer> argLimit = Optional.empty();
+        Optional<Integer> argToSlot = Optional.empty();
 
-        return invMethods.pushItems(Utils.getItemHandler(block), computer, argToName, argFromSlot, argLimit, argToSlot);
+        return InventoryMethods.pushItems(Utils.getItemHandler(block), computer, argToName, argFromSlot, argLimit, argToSlot);
     }
 
-    public Object pullItems (BlockContainerJS block, Direction side, List arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
+    public Object pullItems (BlockContainerJS block, Direction side, List<Object> arguments, IComputerAccess computer, ILuaContext context) throws LuaException {
         String argFromName = Utils.castObjToString(arguments.get(0), "fromName must be a string");
         int argFromSlot = Utils.castObjToInt(arguments.get(1), "fromSlot must be a valid integer");
-        Optional<Integer> argLimit = Optional.ofNullable(arguments.size() > 2 ? Integer.valueOf(Utils.castObjToInt(arguments.get(2), "Limit must be a valid integer")) : null);
-        Optional<Integer> argToSlot = Optional.ofNullable(arguments.size() > 3 ? Integer.valueOf(Utils.castObjToInt(arguments.get(3), "toSlot must be a valid integer")) : null);
+        Optional<Integer> argLimit = Optional.empty();
+        Optional<Integer> argToSlot = Optional.empty();
 
-        return invMethods.pullItems(Utils.getItemHandler(block), computer, argFromName, argFromSlot, argLimit, argToSlot);
+        return InventoryMethods.pullItems(Utils.getItemHandler(block), computer, argFromName, argFromSlot, argLimit, argToSlot);
     }
 
     @Override
