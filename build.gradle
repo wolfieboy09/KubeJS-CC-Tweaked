@@ -63,7 +63,7 @@ repositories {
     maven {
         url "https://squiddev.cc/maven/"
         content {
-            includeGroup("cc.tweaked")
+            includeGroup 'org.squiddev'
         }
     }
     maven {
@@ -87,10 +87,8 @@ dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     implementation fg.deobf("dev.latvian.mods:kubejs-forge:${kubejs_version}")
 
-    compileOnly("cc.tweaked:cc-tweaked-$mcVersion-core-api:$cctVersion")
-    compileOnly(fg.deobf("cc.tweaked:cc-tweaked-$mcVersion-forge-api:$cctVersion"))
-    compileOnly(fg.deobf("cc.tweaked:cc-tweaked-$mcVersion-forge:$cctVersion"))
-    runtimeOnly(fg.deobf("cc.tweaked:cc-tweaked-$mcVersion-forge:$cctVersion"))
+    compileOnly fg.deobf("org.squiddev:cc-tweaked-${mc_version}:${cct_version}:api")
+    runtimeOnly fg.deobf("org.squiddev:cc-tweaked-${mc_version}:${cct_version}")
 
     implementation fg.deobf("dev.latvian.mods:rhino-forge:${rhino_version}")
     implementation fg.deobf("dev.architectury:architectury-forge:${architectury_version}")
