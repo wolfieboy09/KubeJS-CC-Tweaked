@@ -88,7 +88,7 @@ dependencies {
     implementation fg.deobf("dev.latvian.mods:kubejs-forge:${kubejs_version}")
 
     compileOnly fg.deobf("org.squiddev:cc-tweaked-${mc_version}:${cct_version}:api")
-    runtimeOnly fg.deobf("org.squiddev:cc-tweaked-${mc_version}:${cct_version}")
+    implementation fg.deobf("org.squiddev:cc-tweaked-${mc_version}:${cct_version}")
 
     implementation fg.deobf("dev.latvian.mods:rhino-forge:${rhino_version}")
     implementation fg.deobf("dev.architectury:architectury-forge:${architectury_version}")
