@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[47,)"
+loaderVersion = "[43,)"
 issueTrackerURL = "https://github.com/wolfieboy09/KubeJS-CC-1.20.1/issues"
 license = "LGPLv2.1"
 
@@ -20,14 +20,14 @@ logoFile = "icon.png"
 [[dependencies.kjscc]]
 modId = "forge"
 mandatory = true
-versionRange = "[40,)"
+versionRange = "[43,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.kjscc]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.18.2,)"
+versionRange = "[1.19.2,)"
 ordering = "NONE"
 side = "BOTH"
 
@@ -43,4 +43,4 @@ modId = "kubejs"
 mandatory = true
 ordering = "NONE"
 side = "BOTH"
-versionRange = "[2001.6.4-build.121,)"
+versionRange = "[1902.6.2-build69,)"
