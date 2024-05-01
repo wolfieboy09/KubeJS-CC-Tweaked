@@ -1,11 +1,14 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: 'Create a report to help us improve KubeJS + CC: Tweaked'
 title: "[ISSUE]: "
 labels: ''
 assignees: ''
 
 ---
+
+**Mod Version**
+What version of the mod are you using?
 
 **Describe the bug**
 A clear and concise description of what the bug is.
