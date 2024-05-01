@@ -9,6 +9,7 @@ import dev.latvian.mods.kubejs.level.BlockContainerJS;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class PeripheralRegisterEvent extends EventJS {
     public PeripheralRegisterEvent(List<PeripheralJS> peripherals) {
         this.peripherals = peripherals;
