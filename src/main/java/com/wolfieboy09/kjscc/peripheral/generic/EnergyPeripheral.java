@@ -1,10 +1,10 @@
 package com.wolfieboy09.kjscc.peripheral.generic;
 
 import com.wolfieboy09.kjscc.Utils;
-import com.wolfieboy09.kjscc.methods.EnergyMethods;
 import com.wolfieboy09.kjscc.peripheral.PeripheralJS;
 import dan200.computercraft.api.lua.ILuaContext;
 import dan200.computercraft.api.peripheral.IComputerAccess;
+import dan200.computercraft.shared.peripheral.generic.methods.EnergyMethods;
 import dev.latvian.mods.kubejs.level.BlockContainerJS;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.entity.BlockEntity;
