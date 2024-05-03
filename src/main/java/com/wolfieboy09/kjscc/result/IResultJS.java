@@ -10,7 +10,7 @@ public interface IResultJS {
     @Contract("null -> new")
     static @NotNull IResultJS getLuaType(Object o) {
         if (o instanceof MarkerUnpackedResult results) {
-            return new MultiResultJS(Arrays.stream(results.getResults()).map(IResultJS::getLuaType).toArray(IResultJS[]::new));
+            return new MultiResultJS(Arrays.stream(results.results()).map(IResultJS::getLuaType).toArray(IResultJS[]::new));
         }
 
         return new ResultJS(o);
