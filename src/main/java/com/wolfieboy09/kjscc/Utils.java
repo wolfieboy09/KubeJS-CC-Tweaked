@@ -6,6 +6,10 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.IItemHandler;
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class Utils {
     public static int castObjToInt (Object o, String error) throws LuaException {
@@ -19,23 +23,24 @@ public class Utils {
         return d.intValue();
     }
 
-    public static String castObjToString (Object o, String error) throws LuaException {
+    @Contract(value = "null, _ -> fail", pure = true)
+    public static @NotNull String castObjToString (Object o, String error) throws LuaException {
         if (!(o instanceof String)) {
             throw new LuaException(error);
         }
         return (String) o;
     }
 
-    public static IItemHandler getItemHandler(BlockContainerJS block) {
-        return block.getEntity().getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().get();
+    public static @NotNull IItemHandler getItemHandler(@NotNull BlockContainerJS block) {
+        return Objects.requireNonNull(block.getEntity()).getCapability(ForgeCapabilities.ITEM_HANDLER).resolve().get();
     }
 
-    public static IFluidHandler getFluidHandler(BlockContainerJS block) {
-        return block.getEntity().getCapability(ForgeCapabilities.FLUID_HANDLER).resolve().get();
+    public static @NotNull IFluidHandler getFluidHandler(@NotNull BlockContainerJS block) {
+        return Objects.requireNonNull(block.getEntity()).getCapability(ForgeCapabilities.FLUID_HANDLER).resolve().get();
     }
 
-    public static IEnergyStorage getEnergyStorage(BlockContainerJS block) {
-        return block.getEntity().getCapability(ForgeCapabilities.ENERGY).resolve().get();
+    public static @NotNull IEnergyStorage getEnergyStorage(@NotNull BlockContainerJS block) {
+        return Objects.requireNonNull(block.getEntity()).getCapability(ForgeCapabilities.ENERGY).resolve().get();
     }
 
 }

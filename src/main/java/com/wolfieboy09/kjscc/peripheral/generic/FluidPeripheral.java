@@ -10,6 +10,7 @@ import dev.latvian.mods.kubejs.level.BlockContainerJS;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +49,7 @@ public class FluidPeripheral extends PeripheralJS {
     }
 
     @Override
-    public boolean test(BlockContainerJS block) {
+    public boolean test(@NotNull BlockContainerJS block) {
         BlockEntity ent = block.getEntity();
 
         if (ent != null) return ent.getCapability(ForgeCapabilities.FLUID_HANDLER).isPresent();

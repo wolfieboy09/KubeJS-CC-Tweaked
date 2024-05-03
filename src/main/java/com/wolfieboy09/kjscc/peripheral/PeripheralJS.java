@@ -4,6 +4,7 @@ import dev.latvian.mods.kubejs.block.state.BlockStatePredicate;
 import dev.latvian.mods.kubejs.event.EventJS;
 import dev.latvian.mods.kubejs.level.BlockContainerJS;
 import dev.latvian.mods.rhino.util.HideFromJS;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class PeripheralJS extends EventJS {
     }
 
     @HideFromJS
-    public boolean test(BlockContainerJS block) {
+    public boolean test(@NotNull BlockContainerJS block) {
         return predicate.test(block.getBlockState());
     }
 

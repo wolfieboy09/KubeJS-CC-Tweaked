@@ -29,7 +29,7 @@ public class ComputerCraftPlugin extends KubeJSPlugin {
     public void afterInit() {
         super.afterInit();
 
-        List<PeripheralJS> peripheralsList = new ArrayList<PeripheralJS>();
+        List<PeripheralJS> peripheralsList = new ArrayList<>();
         peripheralsList.add(new InventoryPeripheral());
         peripheralsList.add(new FluidPeripheral());
         peripheralsList.add(new EnergyPeripheral());

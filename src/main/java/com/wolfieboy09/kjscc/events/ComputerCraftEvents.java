@@ -14,8 +14,5 @@ public interface ComputerCraftEvents {
     EventHandler PERIPHERAL = ComputerCraftEvents.GROUP.startup("peripheral", () ->  PeripheralJS.class).hasResult();
 
     static void PERIPHERAL(PeripheralRegisterEvent event) throws EventExit {
-        if (PERIPHERAL.hasListeners()) {
-
-        }
     }
 }
