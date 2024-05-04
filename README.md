@@ -9,9 +9,6 @@
 ![required sides](https://img.shields.io/badge/sides_required-Client%20|%20Server-blue) 
 ![Static Badge](https://img.shields.io/badge/developing_versions-none_yet-green)
 
-> [!WARNING]
-> CurseForge can't count properly. The API uses caching and is slow. (45+ downloads, not 29)
-
 CurseForge: ![CurseForge Downloads](https://img.shields.io/curseforge/dt/1000850) \
 Modrinth: ![Modrinth Downloads](https://img.shields.io/modrinth/dt/h43V4ydX)
 
