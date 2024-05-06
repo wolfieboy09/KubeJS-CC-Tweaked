@@ -6,6 +6,7 @@ license = "LGPLv2.1"
 [[mods]]
 modId = "kjscc"
 version = "${mod_version}"
+updateJSONURL="https://raw.githubusercontent.com/wolfieboy09/KubeJS-CC-Tweaked/main/versions.json"
 displayName = "KubeJS + CC: Tweaked"
 authors = "Wolfieboy09"
 description = '''
