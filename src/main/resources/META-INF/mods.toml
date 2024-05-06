@@ -7,6 +7,7 @@ license = "LGPLv2.1"
 modId = "kjscc"
 version = "${mod_version}"
 displayName = "KubeJS + CC: Tweaked"
+updateJSONURL="https://raw.githubusercontent.com/wolfieboy09/KubeJS-CC-Tweaked/main/versions.json"
 authors = "Wolfieboy09"
 description = '''
 Adding support for ComputerCraft from KubeJS.
