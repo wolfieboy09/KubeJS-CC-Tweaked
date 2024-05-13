@@ -1,6 +1,6 @@
-package com.wolfieboy09.KJSCC.platform;
+package com.wolfieboy09.kjscc.platform;
 
-import com.wolfieboy09.KJSCC.platform.services.IPlatformHelper;
+import com.wolfieboy09.kjscc.platform.services.IPlatformHelper;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.loading.FMLLoader;
 

@@ -1,4 +1,4 @@
-package com.wolfieboy09.KJSCC;
+package com.wolfieboy09.kjscc;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

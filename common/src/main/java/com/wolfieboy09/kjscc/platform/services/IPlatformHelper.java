@@ -1,4 +1,4 @@
-package com.wolfieboy09.KJSCC.platform.services;
+package com.wolfieboy09.kjscc.platform.services;
 
 public interface IPlatformHelper {
 

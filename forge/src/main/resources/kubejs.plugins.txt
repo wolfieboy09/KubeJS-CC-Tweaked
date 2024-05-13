@@ -1,1 +1,1 @@
-com.wolfieboy09.KJSCC
+com.wolfieboy09.kjscc.ComputerCraftPlugin

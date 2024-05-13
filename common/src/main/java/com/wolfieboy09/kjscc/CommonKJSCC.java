@@ -1,6 +1,6 @@
-package com.wolfieboy09.KJSCC;
+package com.wolfieboy09.kjscc;
 
-import com.wolfieboy09.KJSCC.platform.Services;
+import com.wolfieboy09.kjscc.platform.Services;
 
 public class CommonKJSCC {
     public static void init() {

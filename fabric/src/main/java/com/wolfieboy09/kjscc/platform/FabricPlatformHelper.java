@@ -1,6 +1,6 @@
-package com.wolfieboy09.KJSCC.platform;
+package com.wolfieboy09.kjscc.platform;
 
-import com.wolfieboy09.KJSCC.platform.services.IPlatformHelper;
+import com.wolfieboy09.kjscc.platform.services.IPlatformHelper;
 import net.fabricmc.loader.api.FabricLoader;
 
 public class FabricPlatformHelper implements IPlatformHelper {

@@ -1,8 +1,8 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.wolfieboy09.KJSCC.mixin",
-  "refmap": "${mod_id}.refmap.json",
+  "package": "com.wolfieboy09.kjscc.mixin",
+  "refmap": "kjscc.refmap.json",
   "compatibilityLevel": "JAVA_17",
   "mixins": [],
   "client": [],
