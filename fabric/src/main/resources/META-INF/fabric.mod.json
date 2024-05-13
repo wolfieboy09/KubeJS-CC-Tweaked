@@ -1,22 +1,23 @@
 {
   "schemaVersion": 1,
-  "id": "${mod_id}",
-  "version": "${version}",
-  "name": "${mod_name}",
-  "description": "${description}",
+  "id": "kjscc",
+  "version": "1.0.3-beta",
+  "name": "KubeJS + CC: Tweaked",
+  "description": "test",
   "authors": [
-    "${mod_author}"
+    "Wolfieboy09",
+    "richie3366"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/wolfieboy09/KubeJS-CC-Tweaked"
   },
-  "license": "${license}",
-  "icon": "${mod_id}.png",
+  "license": "LGPLv2.1",
+  "icon": "kjscc.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.wolfieboy09.KJCSS.ExampleMod"
+      "com.wolfieboy09.KJSCC.FabricKJSCC"
     ]
   },
   "mixins": [],

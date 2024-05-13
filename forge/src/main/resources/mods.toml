@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
-issueTrackerURL = "https://github.com/wolfieboy09/KubeJS-CC-Tweaked/issues"
+issueTrackerURL = "https://github.com/wolfieboy09/KubeJS-CC-1.20.1/issues"
 license = "LGPLv2.1"
 
 [[mods]]
