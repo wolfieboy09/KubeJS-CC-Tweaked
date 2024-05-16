@@ -14,6 +14,16 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     implementation project(":common")
+
+    implementation "dev.latvian.mods:kubejs-fabric:${kubejs_version}"
+
+    compileOnly("cc.tweaked:cc-tweaked-$mcVersion-core-api:$cctVersion")
+    compileOnly("cc.tweaked:cc-tweaked-$mcVersion-fabric-api:$cctVersion")
+    compileOnly("cc.tweaked:cc-tweaked-$mcVersion-fabric:$cctVersion")
+    runtimeOnly("cc.tweaked:cc-tweaked-$mcVersion-fabric:$cctVersion")
+
+    implementation "dev.latvian.mods:rhino-fabric:${rhino_version}"
+    implementation "dev.architectury:architectury-fabric:${architectury_version}"
 }
 
 loom {
