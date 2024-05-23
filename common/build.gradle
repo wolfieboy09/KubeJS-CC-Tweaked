@@ -11,14 +11,12 @@ dependencies {
     // Architectury API. This is optional, and you can comment it out if you don't need it.
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
 
-    implementation "dev.latvian.mods:kubejs:${kubejs_version}"
+    modImplementation "dev.latvian.mods:kubejs:${kubejs_version}"
 
-    compileOnly("cc.tweaked:cc-tweaked-$minecraft_version-core-api:$cct_version")
-    compileOnly("cc.tweaked:cc-tweaked-$minecraft_version-common-api:$cct_version")
-    compileOnly("cc.tweaked:cc-tweaked-$minecraft_version-common:$cct_version")
-    runtimeOnly("cc.tweaked:cc-tweaked-$minecraft_version-common:$cct_version")
+    modCompileOnly("cc.tweaked:cc-tweaked-$minecraft_version-core-api:$cct_version")
+    modCompileOnly("cc.tweaked:cc-tweaked-$minecraft_version-common-api:$cct_version")
+    modCompileOnly("cc.tweaked:cc-tweaked-$minecraft_version-common:$cct_version")
+    modRuntimeOnly("cc.tweaked:cc-tweaked-$minecraft_version-common:$cct_version")
 
-    implementation "dev.latvian.mods:rhino:${rhino_version}"
-    // implementation "dev.architectury:architectury-common:${architectury_api_version}"
-
+    modImplementation "dev.latvian.mods:rhino:${rhino_version}"
 }
