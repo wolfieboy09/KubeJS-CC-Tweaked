@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "kjscc",
   "version": "${version}",
-  "name": "KubeJS CC: Tweaked",
+  "name": "KubeJS + CC: Tweaked",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Me!"
@@ -16,10 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.wolfieboy09.fabric.kjscc.ExampleModFabric"
+      "com.wolfieboy09.kjscc.fabric.ExampleModFabric"
     ],
     "client": [
-      "com.wolfieboy09.fabric.kjscc.ExampleModFabricClient"
+      "com.wolfieboy09.kjscc.fabric.client.ExampleModFabricClient"
     ]
   },
   "mixins": [

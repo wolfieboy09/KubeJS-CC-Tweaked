@@ -6,7 +6,7 @@ license = "Insert License Here"
 [[mods]]
 modId = "kjscc"
 version = "${version}"
-displayName = "KubeJS CC: Tweaked"
+displayName = "KubeJS + CC: Tweaked"
 authors = "Me!"
 description = '''
 This is an example description! Tell everyone what your mod is about!
