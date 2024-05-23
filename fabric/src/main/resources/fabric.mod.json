@@ -16,10 +16,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.wolfieboy09.fabric.ExampleModFabric"
+      "com.wolfieboy09.fabric.kjscc.ExampleModFabric"
     ],
     "client": [
-      "com.wolfieboy09.fabric.client.ExampleModFabricClient"
+      "com.wolfieboy09.fabric.kjscc.ExampleModFabricClient"
     ]
   },
   "mixins": [

@@ -1,10 +1,10 @@
-package com.wolfieboy09.forge;
+package com.wolfieboy09.forge.kjscc;
 
 import dev.architectury.platform.forge.EventBuses;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import com.wolfieboy09.ExampleMod;
+import com.wolfieboy09.kjscc.ExampleMod;
 
 @Mod(ExampleMod.MOD_ID)
 public final class ExampleModForge {
