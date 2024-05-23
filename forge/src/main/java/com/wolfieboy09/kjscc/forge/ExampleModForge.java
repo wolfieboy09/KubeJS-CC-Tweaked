@@ -1,4 +1,4 @@
-package com.wolfieboy09.forge.kjscc;
+package com.wolfieboy09.kjscc.forge;
 
 import dev.architectury.platform.forge.EventBuses;
 import net.minecraftforge.fml.common.Mod;

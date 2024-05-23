@@ -1,4 +1,4 @@
-package com.wolfieboy09.fabric.kjscc;
+package com.wolfieboy09.kjscc.fabric;
 
 import com.wolfieboy09.kjscc.ExampleMod;
 import net.fabricmc.api.ModInitializer;
