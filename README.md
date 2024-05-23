@@ -1,6 +1,6 @@
 # <img src="https://github.com/wolfieboy09/KubeJS-CC-Tweaked/blob/main/KjsCC.svg" width=50 height=50> KubeJS + CC: Tweaked 
 > [!WARNING]
-> KubeJS + CC: Tweaked is for **Forge** and is **not** avalable for Fabric!
+> KubeJS + CC: Tweaked is being made for Fabric, please wait
 
 > [!NOTE]
 > Available on both [Curseforge](https://www.curseforge.com/minecraft/mc-mods/kubejs-cc) and [Modrinth](https://modrinth.com/mod/kubejs+cc-tweaked)
