@@ -24,11 +24,27 @@ subprojects {
     }
 
     repositories {
-        // Add repositories to retrieve artifacts from in here.
-        // You should only use this when depending on other mods because
-        // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-        // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-        // for more information about repositories.
+        maven {
+            url "https://squiddev.cc/maven/"
+            content {
+                includeGroup("cc.tweaked")
+            }
+        }
+        maven {
+            // Shedaniel's maven (Architectury API)
+            url = "https://maven.architectury.dev"
+            content {
+                includeGroup "dev.architectury"
+            }
+        }
+
+        maven {
+            // saps.dev Maven (KubeJS and Rhino)
+            url = "https://maven.saps.dev/releases"
+            content {
+                includeGroup "dev.latvian.mods"
+            }
+        }
     }
 
     dependencies {
