@@ -44,4 +44,4 @@ modId = "kubejs"
 mandatory = true
 ordering = "NONE"
 side = "BOTH"
-versionRange = "[1902.6.2-build69,)"
+versionRange = "[1902.6.2-build.73,)"
