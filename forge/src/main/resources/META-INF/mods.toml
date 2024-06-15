@@ -1,22 +1,27 @@
 modLoader = "javafml"
 loaderVersion = "[47,)"
-#issueTrackerURL = ""
-license = "Insert License Here"
+issueTrackerURL = "https://github.com/wolfieboy09/KubeJS-CC-1.20.1/issues"
+license = "LGPLv2.1"
 
 [[mods]]
 modId = "kjscc"
-version = "${version}"
+version = "${mod_version}"
 displayName = "KubeJS + CC: Tweaked"
-authors = "Me!"
+updateJSONURL="https://raw.githubusercontent.com/wolfieboy09/KubeJS-CC-Tweaked/main/versions.json"
+authors = "Wolfieboy09"
 description = '''
-This is an example description! Tell everyone what your mod is about!
+Adding support for ComputerCraft from KubeJS.
+Credit go to Prunoideae for the original mod that I ported from.
+Big thanks to richie3366 for helping out making the mod work!
+Mod icon made by FooterMan16
 '''
-#logoFile = ""
+
+logoFile = "icon.png"
 
 [[dependencies.kjscc]]
 modId = "forge"
 mandatory = true
-versionRange = "[47,)"
+versionRange = "[40,)"
 ordering = "NONE"
 side = "BOTH"
 
@@ -26,6 +31,20 @@ mandatory = true
 versionRange = "[1.20.1,)"
 ordering = "NONE"
 side = "BOTH"
+
+[[dependencies.kjscc]]
+modId = "computercraft"
+mandatory = true
+ordering = "AFTER"
+side = "BOTH"
+versionRange = "[1.111.0,)"
+
+[[dependencies.kjscc]]
+modId = "kubejs"
+mandatory = true
+ordering = "NONE"
+side = "BOTH"
+versionRange = "[2001.6.4-build.141,)"
 
 [[dependencies.kjscc]]
 modId = "architectury"

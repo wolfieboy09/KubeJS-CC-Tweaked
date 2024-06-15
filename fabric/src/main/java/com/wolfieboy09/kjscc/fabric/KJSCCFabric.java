@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import com.wolfieboy09.kjscc.KJSCC;
 
-public final class ExampleModFabric implements ModInitializer {
+public final class KJSCCFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.

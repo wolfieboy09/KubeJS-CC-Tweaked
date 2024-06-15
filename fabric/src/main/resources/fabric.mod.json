@@ -3,34 +3,33 @@
   "id": "kjscc",
   "version": "${version}",
   "name": "KubeJS + CC: Tweaked",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "Adding support for ComputerCraft from KubeJS.\nCredit goes to Prunoideae for the original mod that I ported from.\nBig thanks to richie3366 for helping to make the port work!\nMod icon made by FooterMan16",
   "authors": [
-    "Me!"
+    "Wolfieboy09",
+    "Richie3366"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/wolfieboy09/KubeJS-CC-Tweaked",
+    "sources": "https://github.com/wolfieboy09/KubeJS-CC-Tweaked"
   },
-  "license": "CC0-1.0",
+  "license": "LGPL-2.1",
   "icon": "assets/kjscc/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.wolfieboy09.kjscc.fabric.ExampleModFabric"
+      "com.wolfieboy09.kjscc.fabric.KJSCCFabric"
     ],
-    "client": [
-      "com.wolfieboy09.kjscc.fabric.client.ExampleModFabricClient"
-    ]
+    "client": []
   },
-  "mixins": [
-    "kjscc.mixins.json"
-  ],
+  "mixins": [],
   "depends": {
     "fabricloader": ">=0.15.11",
     "minecraft": "~1.20.1",
     "java": ">=17",
     "architectury": ">=9.2.14",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "kubejs": ">=2001.6.4-build.141",
+    "computercraft": ">=1.111.0"
   },
   "suggests": {
     "another-mod": "*"
