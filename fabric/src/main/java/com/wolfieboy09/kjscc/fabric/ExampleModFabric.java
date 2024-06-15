@@ -2,7 +2,7 @@ package com.wolfieboy09.kjscc.fabric;
 
 import net.fabricmc.api.ModInitializer;
 
-import com.wolfieboy09.kjscc.ExampleMod;
+import com.wolfieboy09.kjscc.KJSCC;
 
 public final class ExampleModFabric implements ModInitializer {
     @Override
@@ -12,6 +12,6 @@ public final class ExampleModFabric implements ModInitializer {
         // Proceed with mild caution.
 
         // Run our common setup.
-        ExampleMod.init();
+        KJSCC.init();
     }
 }
