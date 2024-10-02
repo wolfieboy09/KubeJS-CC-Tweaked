@@ -13,3 +13,12 @@ CurseForge: ![CurseForge Downloads](https://img.shields.io/curseforge/dt/1000850
 Modrinth: ![Modrinth Downloads](https://img.shields.io/modrinth/dt/h43V4ydX)
 
 # GO VISIT THE WIKI [HERE](https://github.com/wolfieboy09/KubeJS-CC-Tweaked/wiki)! All things are there
+
+# Minecraft Versions TODO
+**Fabric**
+- 1.20.1
+- 1.21 (1.21.1?)
+- 1.19.2
+
+**NeoForge**
+- 1.21 (1.21.1?)
